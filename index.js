@@ -1,6 +1,7 @@
 const chokidar = require('chokidar')
 const RealDebridWatcher = require('./lib/watchers/real-debrid')
 const Aria2Downloader = require('./lib/downloaders/aria2')
+require('dotenv-expand')(require('dotenv').config())
 
 const {
   REAL_DEBRID_API_KEY,
