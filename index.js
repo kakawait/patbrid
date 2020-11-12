@@ -38,7 +38,7 @@ const watcher = new RealDebridWatcher(REAL_DEBRID_API_KEY, downloader.download)
 // Watch for new torrent files
 console.log(`[+] Watching '${WATCH_DIR}' for new torrents`)
 
-chokidar.watch(`${WATCH_DIR}/*.torrent`)
+chokidar.watch(`${WATCH_DIR}/*.torrent`, {awaitWriteFinish: true})
   .on('add', path => watcher.addTorrent(path))
 
 // Check the torrent watch list every "WATCH_RATE" ms
